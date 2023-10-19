@@ -10,7 +10,12 @@ button {
 
 header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    height: 80px;
 }
+
 #little-search {
     display: flex;
     padding: 0 8px;
@@ -23,6 +28,10 @@ header {
     justify-content: center;
     min-width: 333px;
     box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+}
+
+#little-search * {
+    cursor: pointer;
 }
 
 .little-search-button {
@@ -60,4 +69,82 @@ header {
 
 #magnifying-glass-icon {
     width: 12px;
+}
+
+#header-right-section {
+    display: flex;
+    gap: 8px;
+}
+
+.do-airbnb {
+    font-size: 14px;
+    color: #222222;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 22px;
+}
+
+#do-airbnb:hover {
+    background-color: #f7f7f7;
+}
+
+#profile-section {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 5px 12px;
+    cursor: pointer;
+    gap: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 21px;
+}
+
+#category-bar {
+    display: flex;
+    gap: 32px;
+    padding: 20px 40px;
+    overflow: auto;
+}
+
+#category-bar::--webkit-scrollbar {
+    display: none;
+}
+.category-button {
+    height: 66git px;
+    padding: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #717171;
+    cursor: pointer;
+}
+
+.category-button img {
+    width: 28px;
+    box-sizing: border-box;
+}
+
+.category-button:hover {
+    border-bottom: 2px solid #dddddd;
+}
+
+.active-img {
+    display: none;
+}
+.category-button:hover .active-img {
+    display: inline-block;
+}
+.category-button:hover .inactive-img {
+    display: none;
+}
+
+#active-category-button {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+#active-category-button .active-img {
+    display: inline-block;
+}
+
+#active-category-button .inactive-img {
+    display: none;
 }
