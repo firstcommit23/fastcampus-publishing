@@ -82,6 +82,7 @@ body {
 #planet_2 {
     animation: rotation 4s;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
     transform-box: fill-box;
     transform-origin: center;
 }
@@ -115,6 +116,7 @@ body {
 
 #number-0 {
     animation: appearFromBottom 3s;
+    animation-timing-function: cubic-bezier(0.14, 1.2, 0.85, -0.23);
 }
 
 #alien_hand-R,
