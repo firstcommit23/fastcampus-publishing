@@ -10,11 +10,17 @@
     </head>
     <body>
         <header>
-            <a class="button-in-header"> THE MOUNTAIN </a>
+            <a href="#document-title" class="button-in-header">THE MOUNTAIN </a>
             <div id="right-buttons">
                 <a id="active-menu" class="button-in-header">MOUNTAIN</a>
-                <a class="button-in-header">AMAZING BLOG</a>
-                <a class="button-in-header">AMAZING NEWS</a>
+                <a class="button-in-header"
+                    ><span class="long-text">AMAZING BLOG</span
+                    ><span class="short-text">BLOG</span></a
+                >
+                <a class="button-in-header"
+                    ><span class="long-text">AMAZING NEWS</span
+                    ><span class="short-text">NEWS</span></a
+                >
             </div>
         </header>
         <div id="image-wrapper">
@@ -1680,6 +1686,19 @@
                 </g>
             </svg>
         </div>
+        <div id="main-content-wrapper">
+            <p id="document-title">아름다운 금수강산</p>
+            <div id="mountain-tag-wrapper">
+                <ul class="mountain-content-wrapper">
+                    <li class="mountain-content-list">지리산</li>
+                    <li class="mountain-content-list">금강산</li>
+                </ul>
+                <ul class="mountain-content-wrapper">
+                    <li class="mountain-content-list">한라산</li>
+                    <li class="mountain-content-list">북한산</li>
+                </ul>
+            </div>
+        </div>
     </body>
     <script>
         const sun = document.getElementById('sun');
@@ -1697,7 +1716,9 @@
         const mountain6 = document.getElementById('mountain6');
         const mountain7 = document.getElementById('mountain7');
 
+        let clientWidth = document.documentElement.clientWidth;
         window.addEventListener('scroll', () => {
+            if (clientWidth <= 800) return;
             const scrollY = window.scrollY;
 
             sun.style.transform = `translateY(${scrollY * 1.25}px)`;
@@ -1726,5 +1747,18 @@
                     element.setAttribute('id', 'active-menu');
                 });
             });
+
+        const link = document.querySelector('a[href="#document-title"]');
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            document
+                .querySelector('#document-title')
+                .scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // 초기 width일 경우는?
+        window.addEventListener('resize', () => {
+            clientWidth = document.documentElement.clientWidth;
+        });
     </script>
 </html>

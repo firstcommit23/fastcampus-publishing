@@ -1,3 +1,7 @@
+html {
+    /* scroll-behavior: smooth; */
+}
+
 body {
     height: 200vh;
     background-color: #00110c;
@@ -10,6 +14,24 @@ header {
     background-color: #04120c;
     color: #b8e1ee;
     justify-content: space-between;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+}
+
+.long-text {
+    display: none;
+}
+
+@media (min-width: 880px) {
+    .long-text {
+        display: inline-block;
+    }
+    .short-text {
+        display: none;
+    }
 }
 
 .button-in-header {
@@ -36,5 +58,48 @@ header {
     overflow: hidden;
 }
 
-#main-image {
+#document-title {
+    margin-bottom: 40px;
+    color: #88e1ee;
+    font-size: 170%;
+    font-weight: 300;
+    letter-spacing: 10px;
+}
+
+#main-content-wrapper {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mountain-tag-wrapper {
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    gap: 50px;
+}
+
+@media (max-width: 880px) {
+    #mountain-tag-wrapper {
+        flex-direction: column;
+        gap: unset;
+    }
+}
+
+.mountain-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.mountain-content-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 325px;
+    height: 32px;
+    background-color: #b8e1ee;
+    color: #04120c;
+    text-align: center;
 }
