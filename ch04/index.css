@@ -50,7 +50,7 @@ body {
 
 #list-item-wrapper {
     width: 383px;
-    margin: 0 auto 500px;
+    margin: 0 auto 100px;
 }
 
 .list-item {
@@ -73,4 +73,18 @@ body {
 }
 .list-item#on {
     color: white;
+}
+
+#panel1-img {
+    position: relative;
+    height: 320px;
+    margin-bottom: 500px;
+    overflow: hidden;
+}
+
+#flying-santa-image {
+    position: absolute;
+    right: -80px;
+    height: 380px;
+    transform: translate(80px, -13px, rotate(23deg));
 }

@@ -44,6 +44,15 @@
             <li class="list-item">어린이집</li>
             <li class="list-item">크리스마스</li>
         </ul>
+        <main>
+            <section id="panel1-img">
+                <img
+                    id="flying-santa-image"
+                    src="./imgs/santa_flying.png"
+                    alt="santa flying"
+                />
+            </section>
+        </main>
     </body>
     <script>
         const listStyleChangeStartY = 373;
@@ -53,6 +62,8 @@
         const division =
             (listStyleChangeEndY - listStyleChangeStartY) / listItems.length;
 
+        const panel1Img = document.getElementById('panel1-img');
+        const flyingSantaImage = document.getElementById('flying-santa-image');
         window.addEventListener('scroll', () => {
             if (document.getElementById('on'))
                 document.getElementById('on').removeAttribute('id', 'on');
@@ -64,6 +75,33 @@
                     (window.scrollY - listStyleChangeStartY) / division
                 );
                 if (listItems[targetIndex]) listItems[targetIndex].id = 'on';
+            }
+
+            // santa 이미지
+
+            const scrollYBottom =
+                window.scrollY + document.documentElement.clientHeight;
+
+            if (
+                scrollYBottom > panel1Img.offsetTop &&
+                scrollYBottom <
+                    panel1Img.offsetTop + panel1Img.offsetHeight + 100
+            ) {
+                const translateX =
+                    80 -
+                    (80 * 1.3 * (scrollYBottom - panel1Img.offsetTop)) /
+                        (panel1Img.offsetHeight + 100);
+                const translateY =
+                    -13 +
+                    (13 * (scrollYBottom - panel1Img.offsetTop)) /
+                        (panel1Img.offsetHeight + 100);
+
+                const rotationDegree =
+                    23 -
+                    (23 * 1.7 * (scrollYBottom - panel1Img.offsetTop)) /
+                        (panel1Img.offsetHeight + 100);
+
+                flyingSantaImage.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotationDegree}deg)`;
             }
         });
     </script>
