@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="reset.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fast Bank</title>
+    </head>
+    <body>
+        <div id="main-img-wrapper">
+            <img
+                width="320"
+                src="./imgs/Lovepik_com-401339128-data-management-data-analysis-icon-free-vector-illustration-mate.png"
+                alt="coding image"
+            />
+        </div>
+        <div id="intro-main">
+            <p>이미 모두의 은행, 패스트 뱅크</p>
+            <p>함께 일해요.</p>
+            <p id="join-us-text">join us!</p>
+            <img
+                id="down-arrow-icon"
+                src="./imgs/down-arrow.png"
+                alt="down-arrow"
+            />
+        </div>
+        <ul id="list-item-wrapper">
+            <li class="list-item">26주 적금</li>
+            <li class="list-item">배고파</li>
+            <li class="list-item">히히히</li>
+            <li class="list-item">치킨</li>
+            <li class="list-item">패스트캠퍼스</li>
+            <li class="list-item">은채❤️</li>
+            <li class="list-item">사랑해</li>
+            <li class="list-item">귀염둥이</li>
+            <li class="list-item">공부하자</li>
+            <li class="list-item">꺄꺄</li>
+            <li class="list-item">까까</li>
+            <li class="list-item">꾸꾸</li>
+            <li class="list-item">내일머해</li>
+            <li class="list-item">육아중</li>
+            <li class="list-item">어린이집</li>
+            <li class="list-item">크리스마스</li>
+        </ul>
+    </body>
+    <script>
+        const listStyleChangeStartY = 373;
+        const listStyleChangeEndY = 1585;
+        const listItems = document.querySelectorAll('.list-item');
+
+        const division =
+            (listStyleChangeEndY - listStyleChangeStartY) / listItems.length;
+
+        window.addEventListener('scroll', () => {
+            if (document.getElementById('on'))
+                document.getElementById('on').removeAttribute('id', 'on');
+            if (
+                window.scrollY > listStyleChangeStartY &&
+                window.scrollY < listStyleChangeEndY
+            ) {
+                const targetIndex = Math.floor(
+                    (window.scrollY - listStyleChangeStartY) / division
+                );
+                if (listItems[targetIndex]) listItems[targetIndex].id = 'on';
+            }
+        });
+    </script>
+</html>
